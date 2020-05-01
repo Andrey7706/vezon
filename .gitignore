@@ -1,0 +1,9 @@
+/node_modules/
+/.git/
+/bower_components/
+/.idea/
+/**/*.psd
+/**/package-lock.json
+/**/Thumbs.db
+/**/.DS_Store
+/**/*.txt

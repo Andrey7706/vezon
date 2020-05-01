@@ -1,0 +1,666 @@
+// adjustment styles
+body,
+html {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	@include futura(book);
+	font-size: 18px;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	box-sizing: border-box;
+}
+
+.wrapper {
+	min-width: 320px;
+	min-height: 100%;
+	overflow: hidden;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+}
+
+.main {
+	transition: 1s;
+	flex: 1 0 auto;
+}
+
+.container {
+	max-width: $container-width;
+	margin: 0 auto;
+	padding: 0 15px;
+	box-sizing: border-box;
+	width: 100%;
+}
+
+li {
+	list-style: none;
+}
+
+ul {
+	padding: 0;
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+header {
+	flex: 0 0 auto;
+	box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+	width: 100%;
+	position: relative;
+	flex: 0 0 auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    font-weight: normal;
+}
+
+/* Типовая страница */
+
+h1 {
+	@include futura(bold);
+	font-size: 30px;
+	line-height: 1.267;
+	letter-spacing: -0.03em;
+	color: $black;
+}
+h2 {
+	@include futura(bold);
+	font-size: 26px;
+	line-height: 1.27;
+	color: $black;
+	letter-spacing: -0.03em;
+}
+h3 {
+	@include futura(bold);
+	font-size: 20px;
+	line-height: 1.3;
+	color: $black;
+	letter-spacing: -0.03em;
+}
+h4 {
+	@include futura(bold);
+	font-size: 16px;
+	line-height: 1.3;
+	color: $black;
+	letter-spacing: -0.03em;
+}
+p {
+	@include futura();
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 1.7;
+	letter-spacing: -0.03em;
+	color: $black;
+}
+
+ul {
+	padding-left: 30px;
+
+	li {
+		list-style: url('../img/type-check.svg');
+		@include futura();
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		line-height: 2.28;
+		letter-spacing: -0.03em;
+		color: $black;
+	}
+}
+ol {
+	counter-reset: num;
+
+	li {
+		font-size: 14px;
+		letter-spacing: -0.03em;
+		position: relative;
+		@include futura();
+		font-style: normal;
+		font-weight: normal;
+		line-height: 3.5;
+		color: $black;
+
+		&:before {
+			content: counter(num) "";
+			counter-increment: num;
+			color: $white;
+			@include futura(bold);
+			font-size: 20px;
+			letter-spacing: -0.03em;
+			position: absolute;
+			top: 10px;
+			left: -40px;
+			background: $red;
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
+			text-align: center;
+			line-height: 1.5;
+		}
+	}
+}
+
+.table {
+	width: 100%;
+	overflow: auto;
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
+table {
+	width: 100%;
+	min-width: 1000px;
+	border-collapse: collapse;
+	border: 1px solid #E3E3E3;
+	text-align: center;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	letter-spacing: -0.03em;
+	color: #333333;
+}
+th {
+	background: #EEEEEE;
+	padding: 20px 15px;
+	border: 1px solid #E3E3E3;
+}
+td {
+	border: 1px solid #E3E3E3;
+	padding:  10px 15px;
+}
+tr td:first-child {
+	text-align: left;
+}
+tbody tr:nth-child(even) {
+	background: #d6e8ff;
+}
+
+/* Типовая страница end */
+
+input {
+	max-width: 299px;
+	width: 100%;
+	height: 50px;
+	background:transparent;
+	border: 1px solid #E6E6E6;
+	box-sizing: border-box;
+	border-radius: 0 0 2px 2px;
+	margin-bottom: 25px;
+	padding:10px 20px;
+	color: $white;
+	border-top: none;
+	outline: none;
+
+	&:last-child {
+		padding-bottom: 10px;
+	}
+}
+input[type="submit"] {
+	background: $red;
+	border: 1px solid $red;
+	box-shadow: 0 4px 10px rgba(255, 0, 0, 0.3);
+	border-radius: 4px;
+	box-sizing: border-box;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1.15;
+	letter-spacing: -0.03em;
+	color: $white;
+	padding: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	transition: 0.2s;
+	margin-top: 19px;
+	margin-bottom: 0;
+	@include futura(heavy);
+	font-size: 18px;
+
+	&:hover {
+		border: 1px solid $blue;
+		background: $blue;
+		box-shadow: 0 4px 10px rgba(0, 0, 255, 0.3);
+	}
+}
+.form_input {
+	position: relative;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+
+	.form_label {
+		position: absolute;
+		transform: translateY(-50%);
+		top: 0;
+		width: calc(100% - 1px);
+		display: flex;
+		align-items: center;
+
+		&:before {
+			content: '';
+			height: 1px;
+			background: #e6e6e6;
+			width: 20px;
+			flex-grow: 0;
+			border-radius: 2px 0 0 0;
+		}
+		&:after {
+			content: '';
+			width: auto;
+			height: 1px;
+			background: #e6e6e6;
+			flex-grow: 1;
+			border-radius: 0 2px 0 0;
+		}
+	}
+
+	span {
+		margin: 0 10px;
+	}
+}
+
+@media (max-width: 480px) {
+	input {
+		height: 40px;
+	}
+}
+
+.politic {
+	background-image: url('../img/check.svg');
+	background-repeat: no-repeat;
+	background-position: left 2px;
+	padding-left: 26px;
+	min-height: 18px;
+	font-size: 12px;
+    box-sizing: border-box;
+}
+.politic_link {
+	font-style: normal;
+	font-weight: normal;
+	font-size: 12px;
+	line-height: 1;
+	letter-spacing: -0.03em;
+	color:  #E6E6E6;
+	text-decoration: underline;
+	display: block;
+
+	a {
+		color: inherit;
+		text-decoration: underline;
+	}
+}
+
+/* Заголовки страниц товара */
+
+.page_box {
+	width: 100%;
+	background: url('../img/bg-single.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: top center;
+
+}
+.page_title {
+	min-height: 200px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	box-sizing: border-box;
+
+	h1 {
+		color: $white;
+	}
+	.btn_red {
+		width: 140px;
+		margin-top: 25px;
+		padding: 10px;
+	}
+}
+
+/* Иконки над заголовком */
+
+.icons {
+	margin: 0 auto;
+	max-width: 205px;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 14px;
+}
+.btn_blue {
+	width: 299px;
+	background: $blue;
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	@include futura(heavy);
+	font-size: 18px;
+	color: $white;
+	padding: 16px 10px;
+	box-shadow: 0 4px 10px rgba(26, 86, 140, 0.25);
+	border-radius: 4px;
+	letter-spacing: -0.03em;
+	transition: 0.2s;
+
+	&:hover {
+		background: $red;
+	}
+}
+.btn_red {
+    width: 299px;
+    background: $red;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include futura(heavy);
+    font-size: 18px;
+    color: $white;
+    padding: 16px 10px;
+    box-shadow: 0px 4px 10px rgba(255, 0, 0, 0.3);
+    border-radius: 4px;
+    letter-spacing: -0.03em;
+    transition: 0.2s;
+
+    &:hover {
+        background: $blue;
+    }
+}
+
+
+@media (max-width: 480px) {
+	.btn_blue {
+		padding: 13px 10px;
+	}
+}
+.btn_transp {
+	width: 277px;
+	background: $white;
+	border: 1px solid $red;
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	@include futura(medium);
+	font-size: 18px;
+	color: $black;
+	padding: 15px 10px;
+	border-radius: 4px;
+	letter-spacing: -0.03em;
+	transition: 0.2s;
+
+	&:hover {
+		border: 1px solid $blue;
+	}
+}
+
+@media (max-width: 480px) {
+	.btn_transp {
+		padding: 12px 10px;
+	}
+}
+
+/* ----- Блок политики ----- */
+
+.modal-container-polit {
+	font-family: 'Roboto Regular', Arial, sans-serif;
+	max-width: 95%;
+	max-height: 95%;
+	width: 1000px;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 36px 34px;
+	height: auto;
+	position: relative;
+}
+.modal-block-polit {
+	width: 100%;
+	max-width: 100%;
+	height: auto;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	flex-direction: column;
+}
+.title-modal-polit {
+	@include futura(medium);
+	font-size: 24px;
+	line-height: 1.34;
+	letter-spacing: -0.03em;
+	position: relative;
+	margin-bottom: 15px;
+}
+.modal-content-polit {
+	line-height: 1.375;
+	font-size: 16px;
+}
+.caption-modal-polit ul {
+	list-style: none;
+}
+.caption-modal-polit li {
+	background-size: auto;
+	background-position: 0 4px;
+	background-repeat: no-repeat;
+	box-sizing: border-box;
+	padding-left: 5px;
+	font-size: 14px;
+	line-height: 1.28;
+	margin-top: 15px;
+}
+.modal-close-form {
+	position: absolute;
+	top: 15px;
+	right: 12px;
+	box-sizing: border-box;
+	width: 16px;
+	height: 16px;
+	background-image: url(../img/close-modal.png);
+	background-size: auto;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	transition: 0.2s;
+	cursor: pointer;
+	z-index: 100;
+}
+.modal-close-form:hover {
+	transform: rotate(90deg);
+}
+
+/* ------ Модальные окна ------ */
+
+.modal-container-form {
+	max-width: 550px;
+	width: 100%;
+	padding: 0;
+	border-radius: 6px;
+}
+.modal_form-title {
+	@include futura(heavy);
+	font-size: 30px;
+	line-height: 1.2;
+	margin-bottom: 7px;
+}
+.modal_form-description {
+	font-size: 14px;
+	line-height: 1.142;
+	letter-spacing: -0.03em;
+	margin-bottom: 25px;
+}
+.modal_form-wrap {
+	max-width: 100%;
+	display: flex;
+	flex-direction: column;
+	padding: 35px;
+	box-sizing: border-box;
+}
+.modal_form {
+	max-width: 100%;
+
+	p {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+}
+.modal_form input {
+	max-width: 100%;
+	width: 100%;
+	border: 1px solid #A2A2A2;
+	margin-bottom: 10px;
+	color: $black;
+}
+.modal_form input[type="submit"] {
+	color: $white;
+	border: none;
+}
+.modal_form {
+
+	.politic_link {
+		color: $black;
+		display: inline;
+		line-height: 18px;
+	}
+}
+.modal_content-form {
+	display: flex;
+}
+.modal_img {
+	min-width: 180px;
+	background-image: url("../img/bg-top.jpg");
+	background-size: cover;
+	background-position: -490px 0;
+	position: relative;
+}
+.modal-close-form:hover {
+	transform: rotate(90deg);
+}
+
+@media (max-width: 480px) {
+	.modal-container-polit {
+		padding: 15px;
+	}
+	.caption-modal-polit {
+		font-size: 15px;
+	}
+	.title-modal-polit {
+		font-size: 20px;
+		margin-bottom: 0;
+	}
+	.modal_img {
+		display: none;
+	}
+	.modal_form {
+		margin: 0 auto;
+		max-width: 100%;
+
+		input {
+			max-width: 100%;
+		}
+	}
+	.modal-container-form {
+		max-width: 370px;
+	}
+	.modal_form-wrap {
+		padding: 20px;
+	}
+	.modal_form input[type="submit"] {
+		margin-bottom: 20px;
+	}
+	.modal_form-description {
+		margin-bottom: 20px;
+	}
+	.modal_form-title {
+		font-size: 26px;
+	}
+}
+
+/* 404 страница */
+
+.page_404 {
+	padding-top: 131px;
+	padding-bottom: 100px;
+
+	.btn_blue {
+		width: 125px;
+		padding: 10px;
+	}
+}
+.page_404-wrap {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+.page_404-left {
+	max-width: 456px;
+	width: 100%;
+	margin-left: 40px;
+	margin-right: 40px;
+	margin-bottom: 30px;
+
+	img {
+		width: 100%;
+	}
+}
+.page_404-right {
+	max-width: 307px;
+	width: 100%;
+	margin-left: 40px;
+	margin-right: 40px;
+}
+.page_404-title {
+	@include futura(bold);
+	font-size: 28px;
+	line-height: 1.285;
+	letter-spacing: -0.03em;
+	margin-bottom: 6px;
+}
+.page_404-text{
+	font-size: 14px;
+	line-height: 1.285;
+	letter-spacing: -0.03em;
+	margin-bottom: 26px;
+}
+
+@media (max-width: 872px) {
+	.page_404 {
+		padding-top: 80px;
+		padding-bottom: 50px;
+
+		.btn_blue {
+			margin: 0 auto;
+		}
+	}
+	.page_404-right {
+		margin-left: 0;
+		text-align: center;
+	}
+}
+@media (max-width: 600px) {
+	.page_404-left {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.page_404-right{
+		margin-left: 0;
+		margin-right: 0;
+	}
+}

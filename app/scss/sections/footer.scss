@@ -1,0 +1,157 @@
+.footer {
+    font-size: 14px;
+    letter-spacing: -0.03em;
+    background: #F8F8F8;
+}
+.footer_wrap {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 20px 0;
+}
+.footer_left {
+    max-width: 367px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.footer_logo{
+
+}
+.footer_copy{
+    max-width: 257px;
+    margin-left: 25px;
+    letter-spacing: -0.03em;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.footer_politic {
+    display: block;
+    letter-spacing: -0.03em;
+    color: $blue;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+.footer_right{
+    max-width: 585px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.footer_address{
+    max-width: 138px;
+    width: 100%;
+    letter-spacing: -0.03em;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.footer_mail {
+    display: block;
+    letter-spacing: -0.03em;
+    color: $blue;
+    margin-top: 8px;
+    line-height: 1.27;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+.footer_contact {
+    max-width: 168px;
+    width: 100%;
+    letter-spacing: -0.03em;
+    margin-left: 82px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.footer_phone {
+    display: block;
+    @include futura(medium);
+    font-size: 22px;
+    line-height: 1.27;
+    letter-spacing: -0.03em;
+    color: $black;
+}
+.footer_modal {
+    display: block;
+    letter-spacing: -0.03em;
+    color: $blue;
+    line-height: 1.27;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+.footer_develop {
+    letter-spacing: -0.03em;
+    margin-left: 78px;
+    line-height: 1.27;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.footer_udnet {
+    display: block;
+    letter-spacing: -0.03em;
+    color: $blue;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+@media (max-width: 990px) {
+    .footer_wrap {
+        flex-direction: column;
+    }
+    .footer_left {
+        max-width: 100%;
+        justify-content: center;
+    }
+    .footer_right {
+        max-width: 100%;
+        justify-content: space-around;
+    }
+    .footer_address {
+        margin: 5px;
+    }
+    .footer_contact {
+        margin: 5px;
+    }
+    .footer_develop {
+        margin: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer_wrap {
+        padding: 15px 0;
+    }
+    .footer_left {
+        flex-direction: column;
+    }
+    .footer_right {
+        flex-direction: column;
+    }
+    .footer_address {
+        text-align: center;
+    }
+    .footer_contact {
+       text-align: center;
+    }
+    .footer_develop {
+       text-align: center;
+    }
+    .footer_copy {
+        text-align: center;
+        margin-left: 0;
+    }
+}
+
+

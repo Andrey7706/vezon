@@ -1,0 +1,124 @@
+.single_content {
+    padding-top: 40px;
+    padding-bottom: 80px;
+    box-sizing: border-box;
+
+    p {
+        font-size: 18px;
+        line-height: 1.5;
+        letter-spacing: -0.03em;
+    }
+}
+.single_img {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin-top: 20px;
+    margin-right: -10px;
+    margin-left: -10px;
+}
+.single_img-item {
+    width: 370px;
+    max-width: 100%;
+    height: 247px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    margin-left: 10px;
+    margin-right: 10px;
+    flex-grow: 1;
+}
+.single_img-item.empty {
+    max-height: 0;
+    min-height: 0;
+    height: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    padding-top: 0;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    border-top: 0;
+    border-bottom: 0;
+}
+.single_adv {
+    background: #F8F8F8;
+    padding-top: 60px;
+    padding-bottom: 100px;
+
+    h2 {
+        @include futura(heavy);
+        font-size: 32px;
+        letter-spacing: -0.03em;
+        text-align: center;
+    }
+}
+.single_adv-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-top: 59px;
+}
+.single_adv-item {
+    width: 215px;
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+.single_adv-icon {
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 80px;
+}
+.single_adv-text {
+    text-align: center;
+    letter-spacing: -0.03em;
+    margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+    .single_adv {
+        padding-top: 40px;
+        padding-bottom: 50px;
+
+        h2 {
+            font-size: 28px;
+        }
+    }
+    .single_adv-list {
+        margin-top: 50px;
+    }
+    .single_content {
+        padding-bottom: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .single_adv {
+        padding-top: 30px;
+        padding-bottom: 30px;
+
+        h2 {
+            font-size: 26px;
+        }
+    }
+    .single_adv-list {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 30px;
+    }
+    .single_adv-item {
+        width: 100%;
+    }
+    .single_adv-text {
+        margin-top: 10px;
+    }
+    .single_content {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+}
